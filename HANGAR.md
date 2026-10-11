@@ -9,6 +9,13 @@ Hangar moves folders and items. It never deletes anything: "trash" means "move t
 
 This repository is a fork of [Radegast](https://github.com/cinderblocks/radegast) with the plugin, the tools and an optional compact "Classic" theme for Veles added. Upstream's `README.md` is unchanged apart from a pointer to this file.
 
+## Documentation
+
+- **This file**: overview, build, commands, plan formats, the safe workflow, the recommended layout, Marketplace pacing and known limits. Start here.
+- [`plugins/Veles.Plugin.Hangar/README.md`](plugins/Veles.Plugin.Hangar/README.md): the full plugin manual (every command, plan and action-plan columns, check outcomes, journals and undo, export format, remote control).
+- [`tools/inventory/README.md`](tools/inventory/README.md): the Python planning tools.
+- [`AGENTS.md`](AGENTS.md): instructions to give an AI coding agent (Claude Code or similar) helping you: safety rules, workflow, how to drive Hangar, common planner mistakes, where to keep your private data.
+
 ## Requirements
 
 - Windows, with the **.NET 10 SDK**.

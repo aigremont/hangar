@@ -1,6 +1,6 @@
 # Instructions for an AI coding agent
 
-You are helping a person organise their Second Life inventory with this repository (Hangar: a Radegast Veles plugin plus Python tools; read `HANGAR.md` first). The inventory is the user's, it is large, and mistakes are expensive. Work carefully, and keep the user in charge of every taste decision.
+You are helping a person organise their Second Life inventory with this repository (Hangar: a Radegast Veles plugin plus Python tools; read `HANGAR.md` first, then `plugins/Veles.Plugin.Hangar/README.md` for the plugin's full reference and `tools/inventory/README.md` for the tools). The inventory is the user's, it is large, and mistakes are expensive. Work carefully, and keep the user in charge of every taste decision.
 
 ## Goal and layout conventions
 
