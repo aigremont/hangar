@@ -45,6 +45,14 @@
                         </Grid>
 
                         <Separator />
+                        <TextBlock Text="Appearance" FontWeight="SemiBold" FontSize="14" />
+                        <CheckBox Content="Compact classic theme (dark, square, dense)"
+                                  IsChecked="{Binding ClassicTheme}"
+                                  AutomationProperties.Name="Compact classic theme" />
+                        <TextBlock Foreground="{DynamicResource VelesMutedForeground}" FontSize="11"
+                                   Text="Takes effect after restart." />
+
+                        <Separator />
                         <TextBlock Text="Connection" FontWeight="SemiBold" FontSize="14" />
                         <CheckBox Content="Auto-reconnect after unexpected disconnection"
                                   IsChecked="{Binding AutoReconnect}"

@@ -1,0 +1,110 @@
+<!--
+  Radegast Metaverse Client
+  Copyright (c) 2026, Sjofn LLC
+  All rights reserved.
+
+  Optional "classic EVE Online" look: dense, dark, hairline borders, square corners,
+  muted grey text, teal highlights, gold accent. Loaded on top of FluentTheme by
+  App.axaml.cs when the ClassicTheme UI setting is on (default). Every resource key
+  below was confirmed to exist in Avalonia.Themes.Fluent 12.0.5.
+  Compact density is applied in code (FluentTheme.DensityStyle).
+-->
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:fluent="using:Avalonia.Themes.Fluent">
+
+    <Styles.Resources>
+        <ResourceDictionary>
+            <!-- Non-themed values -->
+            <CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
+            <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
+            <CornerRadius x:Key="SliderThumbCornerRadius">0</CornerRadius>
+            <x:Double x:Key="ControlContentThemeFontSize">12</x:Double>
+            <x:Double x:Key="ToolTipContentThemeFontSize">12</x:Double>
+            <x:Double x:Key="ScrollBarSize">10</x:Double>
+            <Thickness x:Key="ButtonBorderThemeThickness">1</Thickness>
+            <Thickness x:Key="TextControlBorderThemeThickness">1</Thickness>
+            <Thickness x:Key="TextControlBorderThemeThicknessFocused">1</Thickness>
+            <Thickness x:Key="ComboBoxBorderThemeThickness">1</Thickness>
+            <Thickness x:Key="ButtonPadding">8,2</Thickness>
+
+            <!-- Gold for key accents (not used by Fluent; available to views) -->
+            <SolidColorBrush x:Key="VelesGoldAccent" Color="#C9A44E" />
+
+            <!-- Dark palette. App.axaml.cs assigns this to FluentTheme.Palettes[Dark] so every
+                 control (not just the ones overridden below) picks the colors up. Contrast on
+                 RegionColor: BaseHigh ~11:1, BaseMediumHigh ~7.5:1, BaseMedium ~4.9:1. -->
+            <fluent:ColorPaletteResources x:Key="VelesClassicDarkPalette"
+                Accent="#4AB3C1"
+                RegionColor="#111316"
+                AltHigh="#0F1114" AltMediumHigh="#111316" AltMedium="#13161A"
+                AltMediumLow="#16191D" AltLow="#1B1F24"
+                BaseHigh="#C8CCD0" BaseMediumHigh="#AEB4BA" BaseMedium="#7C848C"
+                BaseMediumLow="#5A6168" BaseLow="#2A2F35"
+                ChromeLow="#16191D" ChromeMediumLow="#1B1F24" ChromeMedium="#20252A"
+                ChromeHigh="#3A4148" ChromeAltLow="#C8CCD0"
+                ChromeDisabledLow="#5A6168" ChromeDisabledHigh="#23282D"
+                ChromeGray="#7C848C" ChromeWhite="#E6E9EC"
+                ChromeBlackHigh="#0B0C0E" ChromeBlackMedium="#0F1114"
+                ChromeBlackMediumLow="#13161A" ChromeBlackLow="#16191D"
+                ListLow="#1E2328" ListMedium="#272D33"
+                ErrorText="#E5604F" />
+
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Dark">
+                    <!-- Selection: translucent teal -->
+                    <SolidColorBrush x:Key="SystemControlHighlightListAccentLowBrush"    Color="#334AB3C1" />
+                    <SolidColorBrush x:Key="SystemControlHighlightListAccentMediumBrush" Color="#444AB3C1" />
+                    <SolidColorBrush x:Key="SystemControlHighlightListAccentHighBrush"   Color="#554AB3C1" />
+                    <SolidColorBrush x:Key="TextControlSelectionHighlightColor"          Color="#664AB3C1" />
+                    <SolidColorBrush x:Key="SystemControlFocusVisualPrimaryBrush"        Color="#4AB3C1" />
+
+                    <!-- Flat buttons: dark fill, 1px hairline, teal border on hover/press -->
+                    <SolidColorBrush x:Key="ButtonBackground"            Color="#1B1F24" />
+                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#262B31" />
+                    <SolidColorBrush x:Key="ButtonBackgroundPressed"     Color="#1F3A40" />
+                    <SolidColorBrush x:Key="ButtonBorderBrush"            Color="#2A2F35" />
+                    <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="#3A4148" />
+                    <SolidColorBrush x:Key="ButtonBorderBrushPressed"     Color="#4AB3C1" />
+                    <SolidColorBrush x:Key="AccentButtonBackground"            Color="#2F7F8A" />
+                    <SolidColorBrush x:Key="AccentButtonBackgroundPointerOver" Color="#3A97A4" />
+                    <SolidColorBrush x:Key="AccentButtonBackgroundPressed"     Color="#4AB3C1" />
+                    <SolidColorBrush x:Key="AccentButtonBorderBrush"            Color="#4AB3C1" />
+                    <SolidColorBrush x:Key="AccentButtonBorderBrushPointerOver" Color="#6CC6D2" />
+                    <SolidColorBrush x:Key="AccentButtonBorderBrushPressed"     Color="#6CC6D2" />
+                    <SolidColorBrush x:Key="AccentButtonForeground"            Color="#F2F5F7" />
+                    <SolidColorBrush x:Key="AccentButtonForegroundPointerOver" Color="#FFFFFF" />
+                    <SolidColorBrush x:Key="AccentButtonForegroundPressed"     Color="#0B0C0E" />
+
+                    <!-- Text boxes -->
+                    <SolidColorBrush x:Key="TextControlBackground"            Color="#12151A" />
+                    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="#15191E" />
+                    <SolidColorBrush x:Key="TextControlBackgroundFocused"     Color="#12151A" />
+                    <SolidColorBrush x:Key="TextControlBorderBrush"            Color="#2A2F35" />
+                    <SolidColorBrush x:Key="TextControlBorderBrushPointerOver" Color="#3A4148" />
+                    <SolidColorBrush x:Key="TextControlBorderBrushFocused"     Color="#4AB3C1" />
+
+                    <!-- Combo boxes and their popups -->
+                    <SolidColorBrush x:Key="ComboBoxBackground"            Color="#1B1F24" />
+                    <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver" Color="#262B31" />
+                    <SolidColorBrush x:Key="ComboBoxBackgroundPressed"     Color="#1F3A40" />
+                    <SolidColorBrush x:Key="ComboBoxBorderBrush"            Color="#2A2F35" />
+                    <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver" Color="#3A4148" />
+                    <SolidColorBrush x:Key="ComboBoxBorderBrushPressed"     Color="#4AB3C1" />
+                    <SolidColorBrush x:Key="ComboBoxBackgroundBorderBrushFocused" Color="#4AB3C1" />
+                    <SolidColorBrush x:Key="ComboBoxDropDownBackground"  Color="#16191D" />
+                    <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush" Color="#2A2F35" />
+
+                    <!-- Menus and tooltips -->
+                    <SolidColorBrush x:Key="MenuFlyoutPresenterBackground"  Color="#16191D" />
+                    <SolidColorBrush x:Key="MenuFlyoutPresenterBorderBrush" Color="#2A2F35" />
+                    <SolidColorBrush x:Key="ToolTipBackground"  Color="#16191D" />
+                    <SolidColorBrush x:Key="ToolTipBorderBrush" Color="#3A4148" />
+
+                    <!-- Tabs: teal pipe on the selected tab -->
+                    <SolidColorBrush x:Key="TabItemHeaderSelectedPipeFill" Color="#4AB3C1" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+</Styles>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Tests the plugin's core logic. The Core sources are compiled in directly, so
+       the tests need neither Veles nor LibreMetaverse at run time. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Veles.Plugin.Hangar\Core\**\*.cs" Link="Core\%(RecursiveDir)%(Filename)%(Extension)" />
+    <!-- RemoteControl needs only the BCL (HttpListener) and Core, so it is tested over real loopback HTTP. -->
+    <Compile Include="..\Veles.Plugin.Hangar\Live\RemoteControl.cs" Link="Live\RemoteControl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.7.0" />
+    <PackageReference Include="NUnit" Version="4.6.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="6.2.0" />
+  </ItemGroup>
+</Project>

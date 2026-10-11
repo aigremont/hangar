@@ -24,6 +24,9 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Avalonia.Markup.Xaml.Styling;
+using Avalonia.Styling;
+using Avalonia.Themes.Fluent;
 using Radegast.Veles.Core;
 using Radegast.Veles.ViewModels;
 using Radegast.Veles.Views;
@@ -48,6 +51,39 @@ public class App : Application
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
+        ApplyClassicTheme();
+    }
+
+    /// <summary>
+    /// Optional compact "classic EVE" look (see Themes/ClassicTheme.axaml). Setting:
+    /// UiSettings.ClassicTheme, default on. Must run before any window is created.
+    /// </summary>
+    private void ApplyClassicTheme()
+    {
+        if (!UiSettings.ClassicTheme) return;
+        try
+        {
+            var fluent = Styles.OfType<FluentTheme>().FirstOrDefault();
+            if (fluent == null) return;
+
+            var classic = new StyleInclude(new Uri("avares://RadegastVeles/"))
+            {
+                Source = new Uri("avares://RadegastVeles/Themes/ClassicTheme.axaml")
+            };
+            Styles.Insert(Styles.IndexOf(fluent) + 1, classic);
+
+            fluent.DensityStyle = DensityStyle.Compact;
+            if (classic.Loaded is Styles loaded &&
+                loaded.Resources.TryGetResource("VelesClassicDarkPalette", null, out var palette) &&
+                palette is ColorPaletteResources p)
+            {
+                fluent.Palettes[ThemeVariant.Dark] = p;
+            }
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"Classic theme failed to apply: {ex}");
+        }
     }
 
     public override void OnFrameworkInitializationCompleted()

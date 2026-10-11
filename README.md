@@ -1,3 +1,5 @@
+> **This repository is a fork of Radegast** with the **Hangar** inventory plugin added: a Radegast Veles plugin and Python tools that plan and apply Second Life inventory reorganisations safely, plus an optional compact theme. See [HANGAR.md](HANGAR.md) for what it does and how to use it, and [AGENTS.md](AGENTS.md) if an AI coding agent is helping you.
+
 ```
 ██████╗  █████╗ ██████╗ ███████╗ ██████╗  █████╗ ███████╗████████╗    
 ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝ ██╔══██╗██╔════╝╚══██╔══╝    

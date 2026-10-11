@@ -377,6 +377,10 @@ public partial class PreferencesViewModel : ObservableObject, IDisposable
 
     public bool IsReconnectTimeEnabled => AutoReconnect;
 
+    /// <summary>Compact classic look (app-wide, stored via UiSettings; takes effect after restart).</summary>
+    [ObservableProperty]
+    private bool _classicTheme = UiSettings.ClassicTheme;
+
     partial void OnAutoReconnectChanged(bool value) => OnPropertyChanged(nameof(IsReconnectTimeEnabled));
 
     // Privacy
@@ -935,6 +939,8 @@ public partial class PreferencesViewModel : ObservableObject, IDisposable
             _instance.RLV.Enabled = RlvEnabled;
             _instance.RLV.EnabledDebugCommands = RlvDebugCommands;
         }
+
+        UiSettings.ClassicTheme = ClassicTheme;
 
         // Connection
         s["auto_reconnect"] = OSD.FromBoolean(AutoReconnect);
